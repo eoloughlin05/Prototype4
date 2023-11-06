@@ -9,12 +9,19 @@ public class SpawnManager : MonoBehaviour
 
     void Start()
     {
-        Instantiate(enemyPrefab, new Vector3(0, 0, 6), enemyPrefab.transform.rotation); 
+        SpawnEnemyWave();
     }
 
     void Update()
     {
         
+    }
+
+    void SpawnEnemyWave()
+    {
+        for (int i = 0; i < 3; i++) {
+            Instantiate(enemyPrefab, GenerateSpawnPosition(), enemyPrefab.transform.rotation);
+        }
     }
 
     private Vector3 GenerateSpawnPosition()

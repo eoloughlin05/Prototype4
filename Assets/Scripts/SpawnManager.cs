@@ -9,7 +9,7 @@ public class SpawnManager : MonoBehaviour
 
     void Start()
     {
-        SpawnEnemyWave();
+        SpawnEnemyWave(3);
     }
 
     void Update()
@@ -17,9 +17,9 @@ public class SpawnManager : MonoBehaviour
         
     }
 
-    void SpawnEnemyWave()
+    void SpawnEnemyWave(int enemiesToSpawn)
     {
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < enemiesToSpawn; i++) {
             Instantiate(enemyPrefab, GenerateSpawnPosition(), enemyPrefab.transform.rotation);
         }
     }
